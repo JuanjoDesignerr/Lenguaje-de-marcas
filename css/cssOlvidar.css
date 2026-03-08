@@ -1,10 +1,15 @@
 body {
-    background-color: blue;
+    background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
+}
+
+#nombre {
+    color: white;
 }
 
 #contenedor {
@@ -16,3 +21,27 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+
+#contenedor h2 {
+    text-align: center;
+}
+
+.campo input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boton {
+    padding: 10px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
