@@ -48,3 +48,20 @@ nav ul, li, a:hover {
     width: 30%;
     border-radius: 10px;
 }
+
+h2 {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f4f8;
+    margin: 0;
+}
+
+.deportes button {
+    padding: 10px 20px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
