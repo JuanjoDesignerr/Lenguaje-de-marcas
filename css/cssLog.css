@@ -1,4 +1,25 @@
 body {
     background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
 }
 
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#contenedor1 {
+    background-color: white;
+    width: 400px;
+    padding: 200px;
+    border-radius: 10px;
+   
+    
+}
