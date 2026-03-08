@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color:  #1a5c2d;
+    color: white;
+}
+
+nav h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul,li,a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav ul, li, a:hover {
+    color: #aac4e0;
+}
+
+.deportes {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f0f4f8;
+}
+
+
+.deportes img {
+    width: 30%;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f4f8;
+    margin: 0;
+}
+
+.deportes button {
+    padding: 10px 20px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #aac4e0;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
+
+#calendario {
+    background-color: #f0f4f7;
+    padding: 30px 40px;
+}
+
+#calendario h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#calendario table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendario th {
+    padding: 10px;
+    background-color: #1a3a5c;
+    color: white;
+    text-align: center;
+}
+
+#calendario td {
+    padding: 8px;
+    text-align: center;
+}
+
+
+.hora {
+    width: 100%;
+    padding: 8px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
