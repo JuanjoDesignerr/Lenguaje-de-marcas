@@ -11,7 +11,7 @@ body {
 #nombre {
     display: flex;
     align-items: center;
-    color: #1a1a2e;
+    color: white;
 }
 
 #login {
