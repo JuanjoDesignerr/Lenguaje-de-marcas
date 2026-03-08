@@ -65,3 +65,26 @@ h2 {
     cursor: pointer;
     font-weight: bold;
 }
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #aac4e0;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
