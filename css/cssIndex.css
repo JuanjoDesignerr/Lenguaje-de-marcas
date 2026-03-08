@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -30,3 +35,16 @@ nav ul, li, a:hover {
     color: #aac4e0;
 }
 
+.deportes {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f0f4f8;
+}
+
+
+.deportes img {
+    width: 30%;
+    border-radius: 10px;
+}
