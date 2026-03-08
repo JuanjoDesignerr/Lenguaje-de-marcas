@@ -1,5 +1,6 @@
 body {
-    background-color: #1a3a5c;
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,7 +27,6 @@ body {
     text-align: center;
     margin: 0;
 }
-
 
 .campo input {
     width: 100%;
