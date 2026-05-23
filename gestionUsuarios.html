@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <nav>
+        <h1><a href="index.html">Polideportivo Orihuela</a></h1>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="admin.html">Panel Admin</a></li>
+            <li><a href="gestionUsuarios.html">Gestión Usuarios</a></li>
+            <li><a href="Login.html">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="pagina-titulo">
+        <h2>GESTIÓN DE USUARIOS</h2>
+        <p>Inserta, modifica, elimina y consulta usuarios del sistema</p>
+    </div>
+
+    <div class="contenedor-principal">
+
+    <div class="tarjeta">
+        <h3 class="tarjeta-titulo insertar-titulo">INSERTAR NUEVO USUARIO</h3>
+        <form method="POST" action="">
+            <div class="campo">
+                <label>NOMBRE DE USUARIO:</label>
+                <input type="text" name="usuario" placeholder="Nombre de usuario">
+            </div>
+            <div class="campo">
+                <label>CORREO ELECTRÓNICO:</label>
+                <input type="email" name="email" placeholder="ejemplo@correo.com">
+            </div>
+            <div class="campo">
+                <label>CONTRASEÑA:</label>
+                <input type="password" name="contrasena" placeholder="Contraseña">
+            </div>
+            <div class="campo">
+                <label>ROL:</label>
+                <select name="rol">
+                    <option value="usuario">Usuario</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+            <button type="submit" name="insertar" class="btn-insertar">INSERTAR USUARIO</button>
+        </form>
+    </div>
+
+    <div class="tarjeta">
+        <h3 class="tarjeta-titulo actualizar-titulo">MODIFICAR USUARIO</h3>
+        <form method="POST" action="">
+            <div class="campo">
+                <label>ID DEL USUARIO:</label>
+                <input type="number" name="id_actualizar" placeholder="Introduce el ID">
+            </div>
+            <div class="campo">
+                <label>NUEVO NOMBRE DE USUARIO:</label>
+                <input type="text" name="nuevo_usuario" placeholder="Nuevo nombre">
+            </div>
+            <div class="campo">
+                <label>NUEVO CORREO:</label>
+                <input type="email" name="nuevo_email" placeholder="Nuevo correo">
+            </div>
+            <div class="campo">
+                <label>NUEVA CONTRASEÑA:</label>
+                <input type="password" name="nueva_contrasena" placeholder="Nueva contraseña">
+            </div>
+            <div class="campo">
+                <label>NUEVO ROL:</label>
+                <select name="nuevo_rol">
+                    <option value="usuario">Usuario</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+            <button type="submit" name="actualizar" class="btn-actualizar">MODIFICAR USUARIO</button>
+        </form>
+   
+    </div>
+            <div class="tarjeta">
+            <h3 class="tarjeta-titulo eliminar-titulo">ELIMINAR USUARIO</h3>
+            <form method="POST" action="">
+                <div class="campo">
+                    <label>ID DEL USUARIO:</label>
+                    <input type="number" name="id_eliminar" placeholder="Introduce el ID">
+                </div>
+                <div class="campo">
+                    <label>CONFIRMAR NOMBRE:</label>
+                    <input type="text" name="confirmar_usuario" placeholder="Escribe el nombre para confirmar">
+                </div>
+                <button type="submit" name="eliminar" class="btn-eliminar">ELIMINAR USUARIO</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>
