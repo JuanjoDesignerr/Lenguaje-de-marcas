@@ -44,3 +44,422 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #145222;
 }
+
+.cabecera {
+    background-color: #145222;
+    padding: 80px 40px;
+    text-align: center;
+    color: white;
+}
+
+.cabecera-contenido h2 {
+    font-size: 36px;
+    margin: 0 0 15px 0;
+    color: white;
+    background: none;
+    padding: 0;
+    text-align: center;
+}
+
+.cabecera-contenido p {
+    font-size: 17px;
+    color: #c8e6c9;
+    margin: 0 0 30px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cabecera-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-cabecera-principal {
+    padding: 14px 30px;
+    background-color: white;
+    color: #1a5c2d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-cabecera-principal:hover {
+    background-color: #e8f5e9;
+}
+
+.btn-cabecera-secundario {
+    padding: 14px 30px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-cabecera-secundario:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.datos-rapidos {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1a3a5c;
+    padding: 25px 40px;
+    color: white;
+}
+
+.dato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.dato-numero {
+    font-size: 30px;
+    font-weight: bold;
+    color: #aac4e0;
+}
+
+.dato-texto {
+    font-size: 13px;
+    color: #ccc;
+}
+
+.seccion-titulo {
+    text-align: center;
+    padding: 40px 30px 20px 30px;
+    background-color: #f0f4f8;
+}
+
+.seccion-titulo h2 {
+    color: #1a3a5c;
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    text-align: center;
+    padding: 0;
+    background: none;
+}
+
+.seccion-titulo p {
+    color: #666;
+    font-size: 15px;
+    margin: 0;
+}
+
+.deportes {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #dde4ec;
+}
+
+.deportes-inverso {
+    background-color: #ffffff;
+}
+
+.deportes img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    border: 3px solid #1a5c2d;
+    background-color: #c8e6c9;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.texto h2 {
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+    color: #1a3a5c;
+    font-size: 22px;
+    margin: 0;
+}
+
+.texto p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 15px;
+}
+
+.info-pista {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e8f5e9;
+    color: #1a5c2d;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #c8e6c9;
+}
+
+.botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.botones button {
+    padding: 10px 22px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.botones button:hover {
+    background-color: #122a45;
+}
+
+.btn-reservar {
+    background-color: #1a5c2d;
+}
+
+.btn-reservar:hover {
+    background-color: #145222;
+}
+
+.ver-todas {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #dde4ec;
+}
+
+.btn-ver-todas {
+    padding: 12px 35px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-ver-todas:hover {
+    background-color: #122a45;
+}
+
+.como-reservar {
+    background-color: #1a5c2d;
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.como-reservar h2 {
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    color: white;
+    text-align: center;
+    padding: 0;
+    background: none;
+}
+
+.como-reservar > p {
+    color: #c8e6c9;
+    margin: 0 0 40px 0;
+    font-size: 15px;
+}
+
+.pasos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.paso {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 30px 25px;
+    width: 200px;
+}
+
+.paso-numero {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.paso h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: white;
+}
+
+.paso p {
+    margin: 0;
+    font-size: 13px;
+    color: #c8e6c9;
+    line-height: 1.5;
+}
+
+.btn-reserva-grande {
+    padding: 15px 40px;
+    background-color: white;
+    color: #1a5c2d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-reserva-grande:hover {
+    background-color: #e8f5e9;
+}
+
+#calendario {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-top: 4px solid #1a5c2d;
+    text-align: center;
+}
+
+#calendario h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #1a3a5c;
+}
+
+.calendario-sub {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+#calendario table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#calendario th {
+    padding: 14px;
+    background-color: #1a3a5c;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+#calendario td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.hora {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hora:hover {
+    background-color: #1e7e34;
+}
+
+.por-que {
+    background-color: #f0f4f8;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.por-que h2 {
+    color: #1a3a5c;
+    font-size: 24px;
+    margin: 0 0 30px 0;
+    text-align: center;
+    padding: 0;
+    background: none;
+}
+
+.razones {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.razon {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 25px;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.razon h3 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #1a3a5c;
+}
+
+.razon p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #aac4e0;
+    font-size: 16px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffc233;
+}
