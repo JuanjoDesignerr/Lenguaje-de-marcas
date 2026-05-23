@@ -107,6 +107,32 @@ nav ul li a:hover {
     background-color: rgba(255,255,255,0.1);
 }
 
+.datos-rapidos {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1a3a5c;
+    padding: 25px 40px;
+    color: white;
+}
+
+.dato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.dato-numero {
+    font-size: 30px;
+    font-weight: bold;
+    color: #aac4e0;
+}
+
+.dato-texto {
+    font-size: 13px;
+    color: #ccc;
+}
+
 footer {
     display: flex;
     justify-content: space-around;
