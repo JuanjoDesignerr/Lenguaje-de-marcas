@@ -45,7 +45,6 @@ nav ul li a:hover {
     background-color: #145222;
 }
 
-/*Todo*/
 .cabecera {
     background-color: #145222;
     padding: 80px 40px;
@@ -132,6 +131,140 @@ nav ul li a:hover {
     font-size: 13px;
     color: #ccc;
 }
+
+.seccion-titulo {
+    text-align: center;
+    padding: 40px 30px 20px 30px;
+    background-color: #f0f4f8;
+}
+
+.seccion-titulo h2 {
+    color: #1a3a5c;
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    text-align: center;
+    padding: 0;
+    background: none;
+}
+
+.seccion-titulo p {
+    color: #666;
+    font-size: 15px;
+    margin: 0;
+}
+
+.deportes {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #dde4ec;
+}
+
+.deportes-inverso {
+    background-color: #ffffff;
+}
+
+.deportes img {
+    width: 320px;
+    height: 200px;
+    border-radius: 12px;
+    border: 3px solid #1a5c2d;
+    background-color: #c8e6c9;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.texto h2 {
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+    color: #1a3a5c;
+    font-size: 22px;
+    margin: 0;
+}
+
+.texto p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 15px;
+}
+
+.info-pista {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e8f5e9;
+    color: #1a5c2d;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #c8e6c9;
+}
+
+.botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.botones button {
+    padding: 10px 22px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.botones button:hover {
+    background-color: #122a45;
+}
+
+.btn-reservar {
+    background-color: #1a5c2d;
+}
+
+.btn-reservar:hover {
+    background-color: #145222;
+}
+
+.ver-todas {
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #dde4ec;
+}
+
+.btn-ver-todas {
+    padding: 12px 35px;
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-ver-todas:hover {
+    background-color: #122a45;
+}
+
+
 
 footer {
     display: flex;
