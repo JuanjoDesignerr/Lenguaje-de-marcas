@@ -46,6 +46,66 @@ nav ul li a:hover {
 }
 
 /*Todo*/
+.cabecera {
+    background-color: #145222;
+    padding: 80px 40px;
+    text-align: center;
+    color: white;
+}
+
+.cabecera-contenido h2 {
+    font-size: 36px;
+    margin: 0 0 15px 0;
+    color: white;
+    background: none;
+    padding: 0;
+    text-align: center;
+}
+
+.cabecera-contenido p {
+    font-size: 17px;
+    color: #c8e6c9;
+    margin: 0 0 30px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cabecera-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-cabecera-principal {
+    padding: 14px 30px;
+    background-color: white;
+    color: #1a5c2d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-cabecera-principal:hover {
+    background-color: #e8f5e9;
+}
+
+.btn-cabecera-secundario {
+    padding: 14px 30px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-cabecera-secundario:hover {
+    background-color: rgba(255,255,255,0.1);
+}
 
 footer {
     display: flex;
