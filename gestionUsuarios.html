@@ -98,6 +98,73 @@
             </form>
         </div>
     </div>
+      <div class="contenedor-tabla">
+        <h3 class="tarjeta-titulo consultar-titulo">CONSULTAR USUARIOS</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>USUARIO</th>
+                    <th>EMAIL</th>
+                    <th>ROL</th>
+                    <th>FECHA REGISTRO</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- PHP: while($fila = mysqli_fetch_assoc($resultado)) -->
+                <tr>
+                    <td>001</td>
+                    <td>juan_garcia</td>
+                    <td>juan@correo.com</td>
+                    <td>Usuario</td>
+                    <td>20/05/2025</td>
+                    <td><span class="badge-verde">Activo</span></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>admin_principal</td>
+                    <td>admin@polideportivo.es</td>
+                    <td>Admin</td>
+                    <td>01/01/2025</td>
+                    <td><span class="badge-verde">Activo</span></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>maria_lopez</td>
+                    <td>maria@correo.com</td>
+                    <td>Usuario</td>
+                    <td>22/05/2025</td>
+                    <td><span class="badge-rojo">Inactivo</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+     <footer>
+        <div class="footer">
+            <h3>Orihuela</h3>
+            <p>Tel. 965.123.456</p>
+            <p>Email: <a href="#">orihuela@polideportivo.es</a></p>
+            <p>C/ Valencia, 47</p>
+        </div>
+        <div class="footer">
+            <h3>Alicante</h3>
+            <p>Tel. 965.234.567</p>
+            <p>Email: <a href="#">alicante@polideportivo.es</a></p>
+            <p>C/ Mayor, 12</p>
+        </div>
+        <div class="footer">
+            <h3>Murcia</h3>
+            <p>Tel. 968.345.678</p>
+            <p>Email: <a href="#">murcia@polideportivo.es</a></p>
+            <p>C/ Gran Vía, 8</p>
+        </div>
+    </footer>
+
 
      <div class="contenedor-tabla">
         <h3 class="tarjeta-titulo consultar-titulo">CONSULTAR USUARIOS</h3>

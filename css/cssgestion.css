@@ -179,4 +179,50 @@ nav ul li a:hover { background-color: #122a45; }
     color: #333;
 }
 
-.contenedor-tabla tr:last-child td { border-bottom: none; }
+.contenedor-tabla tr:last-child td {
+     border-bottom: none; 
+}
+
+.badge-verde {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-rojo {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #1a1a2e;
+    color: white;
+    margin-top: 10px;
+}
+
+.footer h3 { 
+    margin-bottom: 10px; 
+    color: #aac4e0; 
+    font-size: 16px; 
+}
+
+.footer p { 
+    font-size: 14px;
+    margin: 5px 0; 
+}
+.footer a { 
+    color: #f0a500; 
+    text-decoration: none; 
+}
