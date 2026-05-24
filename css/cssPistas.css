@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7f6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a5c2d;
+    color: white;
+}
+
+nav h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+nav h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #145222;
+    color: #aac4e0;
+}
+
+.pistas-banner {
+    background-color: #1a5c2d;
+    color: white;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.pistas-banner h2 {
+    margin: 0 0 10px 0;
+    font-size: 26px;
+}
+
+.pistas-banner p {
+    margin: 0;
+    color: #c8e6c9;
+    font-size: 15px;
+}
+
+.pistas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.pista-card {
+    background-color: white;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.pista-card img {
+    width: 100%;
+    height: 170px;
+    background-color: #cce0cc;
+    display: block;
+}
+
+.pista-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.pista-info h3 {
+    margin: 0;
+    color: #1a3a5c;
+    font-size: 17px;
+}
+
+.pista-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.pista-detalles {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.detalle-badge {
+    background-color: #eaf4ea;
+    color: #1a5c2d;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pista-card .boton {
+    margin: 0 20px 20px 20px;
+    padding: 10px;
+    background-color: #1a5c2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.pista-card .boton:hover {
+    background-color: #145222;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+    color: #aac4e0;
+    font-size: 16px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
