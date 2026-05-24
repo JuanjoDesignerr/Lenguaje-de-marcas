@@ -1,4 +1,6 @@
 body {
+    background-image: url('../imagenes/pistaBadminton.jpg');
+    background-size: cover;
     background-color: #1a3a5c;
     display: flex;
     justify-content: center;
@@ -71,4 +73,33 @@ body {
 
 .enlace-inicio:hover {
     color: #1a3a5c;
+}
+
+.separador {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1a3a5c;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    margin: 5px 0;
+    letter-spacing: 1px;
+}
+
+.selector-tarjeta {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.campo-doble {
+    display: flex;
+    gap: 10px;
+}
+
+.campo-doble .campo {
+    flex: 1;
 }

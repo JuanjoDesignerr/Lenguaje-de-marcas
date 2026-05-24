@@ -11,24 +11,50 @@
         <h2>COMPLETA TU RESERVA</h2>
 
         <div id="formulario">
+                <div class="campo">
+                    <label>PISTA A RESERVAR:</label>
+                    <input type="text" placeholder="Escribe la pista">
+                </div>
+
+                <div class="campo">
+                    <label>FECHA Y HORA:</label>
+                    <input type="datetime-local" placeholder="Introduce la hora escogida">
+                </div>
+
+                <div class="campo">
+                    <label>NUMERO DE JUGADORES:</label>
+                    <input type="number" placeholder="Numero de jugadores">
+
+                </div>
+                <div class="separador">DATOS DE PAGO</div>
+
             <div class="campo">
-                <label>PISTA A RESERVAR:</label>
-                <input type="text" placeholder="Escribe la pista">
+                <label>TIPO DE TARJETA:</label>
+                <select class="selector-tarjeta">
+                    <option value="">Selecciona tu tarjeta</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                </select>
             </div>
 
             <div class="campo">
-                <label>FECHA Y HORA:</label>
-                <input type="datetime-local" placeholder="Introduce la hora escogida">
+                <label>NÚMERO DE TARJETA:</label>
+                <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
             </div>
 
-            <div class="campo">
-                <label>NUMERO DE JUGADORES:</label>
-                <input type="number" placeholder="Numero de jugadores">
-
-                <button class="boton">PAGAR</button>
-                <a href="index.html" class="enlace-inicio">Volver atras</a>
-
+            <div class="campo-doble">
+                <div class="campo">
+                    <label>FECHA DE CADUCIDAD:</label>
+                    <input type="text" placeholder="MM/AA" maxlength="5">
+                </div>
+                <div class="campo">
+                    <label>CÓDIGO DE SEGURIDAD:</label>
+                    <input type="text" placeholder="CVV" maxlength="3">
+                </div>
+                 
             </div>
+              <button class="boton">PAGAR</button>
+              <a href="index.html" class="enlace-inicio">Volver atras</a>
         </div>
     </div>
 </body>
