@@ -58,8 +58,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    align-self: center;
     width: 150px;
+    display: block;
+    margin: 0 auto;
 }
 
 .enlace-inicio {
@@ -75,31 +76,3 @@ body {
     color: #1a3a5c;
 }
 
-.separador {
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #1a3a5c;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    padding: 8px 0;
-    margin: 5px 0;
-    letter-spacing: 1px;
-}
-
-.selector-tarjeta {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.campo-doble {
-    display: flex;
-    gap: 10px;
-}
-
-.campo-doble .campo {
-    flex: 1;
-}
