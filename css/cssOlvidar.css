@@ -45,4 +45,16 @@ body {
     width: 100%;
 }
 
+.enlace-inicio {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+.enlace-inicio:hover {
+    color: #1a3a5c;
+}
 
