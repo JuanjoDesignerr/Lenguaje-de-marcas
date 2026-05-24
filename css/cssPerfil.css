@@ -159,3 +159,18 @@ nav ul li a:hover {
 .boton:hover {
     background-color: #122a45;
 }
+
+.boton_guardar {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton_guardar:hover {
+    background-color: #1b5e20;
+}
