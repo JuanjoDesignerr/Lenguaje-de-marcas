@@ -9,6 +9,15 @@
 <body>
 
     <h1 id="nombre">POLIDEPORTIVO ORIHUELA</h1>
+    <?php
+
+        $host = 'localhost';
+        $dbname = 'bd8';
+        $user = 'root';
+        $pass = '';
+        $port = '3306';
+
+    ?>
 
     <div id="contenedor">
         <h2>FORMULARIO DE REGISTRO</h2>
