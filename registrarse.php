@@ -1,5 +1,5 @@
 <?php 
-
+    $error = "";
      try{
             $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
            
@@ -17,7 +17,7 @@
                 $usuarioExistente = $buscarCorreo->fetch(PDO::FETCH_ASSOC);
                 
                 if($usuarioExistente) {
-                    echo "El correo ya existe prueba a introducir otro correo.";
+                    $error = "El correo ya existe prueba a introducir otro correo.";
                 } else {
 
                     //Indicamos que hay un hueco reservado y despues en execute completamos el hueco.
@@ -53,7 +53,10 @@
 
         <div id="contenedor">
             <h2>FORMULARIO DE REGISTRO</h2>
-
+               <?php if (!empty($error)) {
+                    echo $error; 
+                    }   
+                ?>
             <div class="campo">
                 <label>USUARIO:</label>
                 <input type="text" name="usuario_nombre" placeholder="Usuario" required>
