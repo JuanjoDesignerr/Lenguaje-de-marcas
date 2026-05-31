@@ -94,7 +94,7 @@
 
             <a href="olvidar_contraseña.html">¿Has olvidado tu contraseña?</a>
 
-            <a href="registrarse.html">No tienes cuenta, regístrate</a>
+            <a href="registrarse.php">No tienes cuenta, regístrate</a>
             
         
             <a href="admin.html" class="enlace-admin">Acceso administrador</a>
