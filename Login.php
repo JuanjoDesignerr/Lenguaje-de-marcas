@@ -28,9 +28,11 @@
                     if ($pass == $usuarioLogueado['contrasena']) {
                         //Guardamos el nombre del usuario como una sesion abierta para recordarlo cuando comenzemos la sesion
                         $_SESSION['usuario_nombre'] = $usuarioLogueado['nombre'];
+                        header("Location: index.html");
+                        exit();
                     }
-                    header("Location: index.html");
-                    exit();
+                    
+                 //En el caso de que no ponga ningun dato o el usuario no sea correcto saltara el siguiente mensaje.
                 } else {
                     $error = "El usuario introducido no existe, revise que los datos introducidos son correctos.";
                 }
@@ -68,22 +70,17 @@
         <div id="contenedor1">
             <h2>INICIO DE SESION</h2>
 
-            <div class="campo">
-                <label>USUARIO:</label>
-                <input type="text" placeholder="Usuario">
-            <?php if (!empty($error)) {
-                echo $error;
-            } ?>
+                <?php if (!empty($error)) {
+                    echo $error; 
+                    }   
+                ?>
             <div class="campo">
                 <label>USUARIO:</label>
                 <input type="text" name="usuario_nombre" placeholder="Usuario">
-            </div>
-
+            
+           
             <div class="campo">
                 <label>CONTRASEÑA:</label>
-
-                <input type="password" placeholder="Contraseña">
-
                 <input type="password" name="usuario_contraseña" placeholder="Contraseña">
             </div>
 
@@ -93,36 +90,19 @@
 
             </div>
 
-            <a href="index.html"><button class="boton_login">INICIAR SESION</button></a>
+            <button type="submit" class="boton_login">INICIAR SESION</button>
 
             <a href="olvidar_contraseña.html">¿Has olvidado tu contraseña?</a>
 
             <a href="registrarse.html">No tienes cuenta, regístrate</a>
             
-            <div class="redes">
-                <p>INICIA CON:</p>
-                <div class="botones-redes">
-                    <button>GOOGLE</button>
-                    <button>MICROSOFT</button>
-                    <button>APPLE</button>
-                </div>
-            </div>
-                <a href="admin.html" class="enlace-admin">Acceso administrador</a>
+        
+            <a href="admin.html" class="enlace-admin">Acceso administrador</a>
         </div>
 
         
 
 
     </section>
-</body>
-</html>
-
-            <a href="registrarse.php">No tienes cuenta, regístrate</a>
-            
-            <a href="admin.html" class="enlace-admin">Acceso administrador</a>
-        </div>
-
-    </section>
-    </form>
 </body>
 </html>
