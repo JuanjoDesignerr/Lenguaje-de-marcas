@@ -9,6 +9,32 @@
 <body>
 
     <h1 id="nombre">POLIDEPORTIVO ORIHUELA</h1>
+    <?php
+
+        $host = 'localhost';
+        $dbname = 'bd8';
+        $user = 'root';
+        $pass = 'root';
+        $port = '3306';
+
+        try {
+        $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $e) {
+        echo "Se ha producido un error al intentar conectar al servidor MySQL: " . $e->getMessage();
+        }
+
+        try {
+        # Otro Ejemplo de error ! DELECT en lugar de SELECT!
+        $pdo->exec('DELECT name FROM people');
+        } catch(PDOException $e) {
+        echo "Se ha producido un error en la ejecucion de la consulta: " . $e->getMessage();
+
+        # En este caso hemos mostrado el mensaje de error y además almacenamos en un fichero los errores generados.
+        file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
+        }
+
+    ?>
 
     <div id="contenedor">
         <h2>FORMULARIO DE REGISTRO</h2>
@@ -20,6 +46,11 @@
 
         <div class="campo">
             <label>CONTRASEÑA:</label>
+            <input type="password" placeholder="Confirmar contraseña">
+        </div>
+
+        <div class="campo">
+            <label>CONFIRMAR CONTRASEÑA:</label>
             <input type="password" placeholder="Confirmar contraseña">
         </div>
 
