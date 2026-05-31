@@ -4,6 +4,7 @@
     session_start();
 
      try{
+            $error= "";
             $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
            
             //Comprobamos si el usuario ha enviado los tres campos obligatorios
@@ -34,7 +35,7 @@
                     header("Location: index.html");
                     exit();
                 } else {
-                    echo "El usuario introducido no existe, revise que los datos introducidos son correctos.";
+                    $error = "El usuario introducido no existe, revise que los datos introducidos son correctos.";
                 }
 
 
@@ -68,7 +69,9 @@
 
         <div id="contenedor1">
             <h2>INICIO DE SESION</h2>
-
+            <?php if (!empty($error)) {
+                echo $error;
+            } ?>
             <div class="campo">
                 <label>USUARIO:</label>
                 <input type="text" name="usuario_nombre" placeholder="Usuario">
