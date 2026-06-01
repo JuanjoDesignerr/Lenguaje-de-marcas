@@ -100,20 +100,94 @@
         </form>
     </div>
 
+    <?php 
+        $error_modificar = "";
+        $exito_modificar = "";
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['actualizar'])) {
+            $correo_buscar = $_POST['correo_buscar'];
+
+            try{
+                $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+                $stmtCheck = $pdo->prepare("SELECT * FROM usuarios WHERE correo = :correo");
+                $stmtCheck->execute([':correo' => $correo_buscar]);
+                $datosUsuario = $stmtCheck->fetch(PDO::FETCH_ASSOC);
+
+                if (!$datosUsuario) {
+                    // Si el correo no existe en la BD mandamos un mensaje.
+                    $error_modificar = "Error: No se encontró ningún usuario con el correo '$correo_buscar'.";
+                } else {
+
+                    //Comprobamos que las variables estan rellenadas para sustituirlas con el 
+                    // nuevo dato sino se quedan con el que habia en la BD
+                    if (!empty($_POST['nuevo_nombre'])) {
+                        $nuevo_nombre = $_POST['nuevo_nombre']; 
+                    } else {
+                        $nuevo_nombre = $datosUsuario['nombre']; 
+                    }
+
+                    if (!empty($_POST['nuevo_correo'])) {
+                        $nuevo_correo = $_POST['nuevo_correo'];
+                    } else {
+                        $nuevo_correo = $datosUsuario['correo'];
+                    }
+
+                    if (!empty($_POST['nueva_contrasena'])) {
+                         $nueva_pass = $_POST['nueva_contrasena'];
+                    } else {
+                        $nueva_pass = $datosUsuario['contrasena'];
+                    }
+
+                    if (!empty($_POST['nuevo_rol'])) {
+                        $nuevo_rol = $_POST['nuevo_rol'];
+                    } else {
+                        $nuevo_rol = $datosUsuario['rol'];
+                    }
+
+                    $sql = "UPDATE usuarios SET nombre = :nombre, correo = :nuevo_correo, contrasena = :pass, rol = :rol 
+                    WHERE correo = :correo_actual";
+
+                    $stmtUpdate = $pdo->prepare($sql);
+                    $stmtUpdate->execute([
+                        ':nombre'        => $nuevo_nombre,
+                        ':nuevo_correo'  => $nuevo_correo,
+                        ':pass'          => $nueva_pass,
+                        ':rol'           => $nuevo_rol,
+                        ':correo_actual' => $correo_buscar
+                    ]);
+
+                    $exito_modificar = "El usuario con correo '$correo_buscar' ha sido modificado correctamente.";
+
+                }
+
+            } catch (PDOException $e) {
+                $error_modificar="error en la base de datos". $e->getmessage();
+            }
+
+
+        }
+    ?>
+
+ 
+
     <div class="tarjeta">
         <h3 class="tarjeta-titulo actualizar-titulo">MODIFICAR USUARIO</h3>
-        <form method="POST" action="">
+        <form method="POST" action="gestionUsuarios.php">
             <div class="campo">
+                <?php if (!empty($error_modificar)) {
+                    echo $error_modificar; 
+                    }   
+                ?>
                 <label>CORREO DEL USUARIO</label>
-                <input type="number" name="id_actualizar" placeholder="Introduce el ID">
+                <input type="email" name="correo_buscar" placeholder="Introduzca el correo del usuario">
             </div>
             <div class="campo">
                 <label>NUEVO NOMBRE DE USUARIO:</label>
-                <input type="text" name="nuevo_usuario" placeholder="Nuevo nombre">
+                <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre">
             </div>
             <div class="campo">
                 <label>NUEVO CORREO:</label>
-                <input type="email" name="nuevo_email" placeholder="Nuevo correo">
+                <input type="email" name="nuevo_correo" placeholder="Nuevo correo">
             </div>
             <div class="campo">
                 <label>NUEVA CONTRASEÑA:</label>
@@ -122,8 +196,8 @@
             <div class="campo">
                 <label>NUEVO ROL:</label>
                 <select name="nuevo_rol">
-                    <option value="usuario">Usuario</option>
-                    <option value="admin">Administrador</option>
+                    <option value="usuario">usuario</option>
+                    <option value="admin">admin</option>
                 </select>
             </div>
             <button type="submit" name="actualizar" class="btn-actualizar">MODIFICAR USUARIO</button>
@@ -162,7 +236,6 @@
             }
 
         ?>
-
 
 
         <div class="tarjeta">

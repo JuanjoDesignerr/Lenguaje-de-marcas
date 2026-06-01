@@ -20,10 +20,10 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
     <nav>
         <h1><a href="index.html">Polideportivo Orihuela</a></h1>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.php">Inicio</a></li>
             <li><a href="pistas.html">Ver Pistas</a></li>
             <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="perfil.html">Ver Perfil</a></li>
+            <li><a href="perfil.php">Actualizar Datos</a></li>
             <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
         </ul>
     </nav>
