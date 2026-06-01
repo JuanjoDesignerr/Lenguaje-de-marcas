@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Si el usuario no ha iniciado sesion, no puede entrar.
+if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
+    header("Location: Login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
