@@ -78,4 +78,10 @@ h1 {
     font-size: 13px;
     color: #1a3a5c;
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.enlace:hover {
+    color: #122a45;
+    text-decoration: underline;
 }

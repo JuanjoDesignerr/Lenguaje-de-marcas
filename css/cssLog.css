@@ -5,7 +5,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    
 }
 
 #nombre {
@@ -21,7 +20,6 @@ body {
     align-items: center;
     gap: 20px;
     padding-top: 40px;
-
 }
 
 #contenedor1 {
@@ -67,6 +65,11 @@ body {
     font-weight: bold;
     font-size: 15px;
     margin-top: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.boton_login:hover {
+    background-color: #1a252f;
 }
 
 #contenedor1 a {
@@ -74,6 +77,12 @@ body {
     font-size: 13px;
     text-decoration: none;
     text-align: center;
+    transition: color 0.2s ease;
+}
+
+#contenedor1 a:hover {
+    color: #34495e;
+    text-decoration: underline;
 }
 
 .redes p {
@@ -81,7 +90,6 @@ body {
     font-size: 13px;
     margin: 5px;
 }
-
 
 .botones-redes {
     display: flex;
@@ -96,6 +104,11 @@ body {
     font-weight: bold;
     font-size: 13px;
     background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.botones-redes button:hover {
+    background-color: #f0f0f0;
 }
 
 .enlace-admin {
@@ -108,4 +121,10 @@ body {
     border-radius: 6px;
     font-weight: bold;
     margin-top: 5px;
+    transition: all 0.2s ease;
+}
+
+.enlace-admin:hover {
+    background-color: #e9ebee;
+    color: white;
 }
