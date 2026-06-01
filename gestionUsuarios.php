@@ -1,3 +1,49 @@
+<?php 
+    $error = "";
+     try{
+            $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+           
+            //Compruebo si ha enviado los datos y los almacenamos en variables.
+            if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrasena']) && isset($_POST['rol_usuario'])) {
+                $nombre = $_POST['usuario'];
+                $correo = $_POST['email'];
+                $pass = $_POST['contrasena'];
+                $rol = $_POST['rol_usuario'];
+
+                //Comprobamos si el correo ya existe
+                $buscarCorreo = $pdo->prepare('SELECT * FROM usuarios WHERE correo = :correo');
+                $buscarCorreo->execute([':correo' => $correo]);
+                
+                //Buscamos si por la clave correo=>'nuestrocorreo' en el cual el nuestro correo es el correo introducido
+                $usuarioExistente = $buscarCorreo->fetch(PDO::FETCH_ASSOC);
+                
+                if($usuarioExistente) {
+                    $error = "El correo ya existe prueba a introducir otro correo.";
+                } else {
+
+                    //Indicamos que hay un hueco reservado y despues en execute completamos el hueco.
+                    $stmt = $pdo->prepare('INSERT INTO usuarios (nombre, correo, contrasena, rol) VALUES (:nombre, :correo, :pass, :rol);');
+                    $stmt->execute([
+                        ':nombre' => $_POST['usuario'],
+                        ':correo' => $_POST['email'],
+                        ':pass' => $_POST['contrasena'],
+                        ':rol' => $_POST['rol_usuario']
+                        
+                    ]);
+                }
+            }
+
+            //Atrapamos la excepcion si no nos llegamos a conectar a la base de datos.
+        } catch(PDOException $e) {
+        
+        echo "error conectando con la base de datos:" . $e->getMessage();
+        
+        }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +58,9 @@
         <nav>
         <h1><a href="index.html">Polideportivo Orihuela</a></h1>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="admin.html">Panel Admin</a></li>
-            <li><a href="gestionUsuarios.html">Gestión Usuarios</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="admin.php">Panel Admin</a></li>
+            <li><a href="gestionUsuarios.php">Gestión Usuarios</a></li>
             <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
@@ -29,24 +75,28 @@
 
     <div class="tarjeta">
         <h3 class="tarjeta-titulo insertar-titulo">INSERTAR NUEVO USUARIO</h3>
-        <form method="POST" action="">
+        <form method="POST" action="gestionUsuarios.php">
+                <?php if (!empty($error)) {
+                    echo $error; 
+                    }   
+                ?>
             <div class="campo">
                 <label>NOMBRE DE USUARIO:</label>
-                <input type="text" name="usuario" placeholder="Nombre de usuario">
+                <input type="text" name="usuario" placeholder="Nombre de usuario" required>
             </div>
             <div class="campo">
                 <label>CORREO ELECTRÓNICO:</label>
-                <input type="email" name="email" placeholder="ejemplo@correo.com">
+                <input type="email" name="email" placeholder="ejemplo@correo.com" required>
             </div>
             <div class="campo">
                 <label>CONTRASEÑA:</label>
-                <input type="password" name="contrasena" placeholder="Contraseña">
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
             </div>
             <div class="campo">
                 <label>ROL:</label>
-                <select name="rol">
-                    <option value="usuario">Usuario</option>
-                    <option value="admin">Administrador</option>
+                <select name="rol_usuario" required>
+                    <option value="usuario">usuario</option>
+                    <option value="admin">admin</option>
                 </select>
             </div>
             <button type="submit" name="insertar" class="btn-insertar">INSERTAR USUARIO</button>

@@ -27,7 +27,7 @@
                     if ($pass == $usuarioLogueado['contrasena']) {
                         //Guardamos el nombre del usuario como una sesion abierta para recordarlo cuando comenzemos la sesion
                         $_SESSION['usuario_nombre'] = $usuarioLogueado['nombre'];
-                        header("Location: index.html");
+                        header("Location: index.php");
                         exit();
                     }
                     

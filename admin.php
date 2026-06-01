@@ -21,7 +21,7 @@
                 
                 // Si cumple las TRES cosas a la vez, guardamos sesión y entra
                 $_SESSION['admin_nombre'] = $usuarioLogueado['nombre'];
-                header("Location: gestionUsuarios.html"); 
+                header("Location: gestionUsuarios.php"); 
                 exit();
             } else {
                 $error = "Error el usuario o la contraseña no son correctos, revise sus permisos.";
