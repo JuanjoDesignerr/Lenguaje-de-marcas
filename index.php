@@ -33,8 +33,8 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
             <h2>Bienvenido al Polideportivo Orihuela</h2>
             <p>Las mejores instalaciones deportivas de la región. Reserva tu pista favorita de forma rápida y sencilla.</p>
             <div class="cabecera-botones">
-                <a href="pistas.html"><button class="btn-cabecera-principal">Ver Nuestras Pistas</button></a>
-                <a href="reservas.html"><button class="btn-cabecera-secundario">Hacer una Reserva</button></a>
+                <a href="pistas.php"><button class="btn-cabecera-principal">Ver Nuestras Pistas</button></a>
+                <a href="reservas.php"><button class="btn-cabecera-secundario">Hacer una Reserva</button></a>
             </div>
         </div>
     </div>
@@ -74,8 +74,8 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                 <span class="badge">Iluminación nocturna</span>
             </div>
             <div class="botones">
-                <a href="pistas.html"><button>Ver más info</button></a>
-                <a href="reservas.html"><button class="btn-reservar">Reservar ahora</button></a>
+                <a href="pistas.php"><button>Ver más info</button></a>
+                <a href="reservas.php"><button class="btn-reservar">Reservar ahora</button></a>
             </div>
         </div>
     </section>
@@ -91,8 +91,8 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                 <span class="badge">Parqué</span>
             </div>
             <div class="botones">
-                <a href="pistas.html"><button>Ver más info</button></a>
-                <a href="reservas.html"><button class="btn-reservar">Reservar ahora</button></a>
+                <a href="pistas.php"><button>Ver más info</button></a>
+                <a href="reservas.php"><button class="btn-reservar">Reservar ahora</button></a>
             </div>
         </div>
     </section>
@@ -108,8 +108,8 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                 <span class="badge">Exterior</span>
             </div>
             <div class="botones">
-                <a href="pistas.html"><button>Ver más info</button></a>
-                <a href="reservas.html"><button class="btn-reservar">Reservar ahora</button></a>
+                <a href="pistas.php"><button>Ver más info</button></a>
+                <a href="reservas.php"><button class="btn-reservar">Reservar ahora</button></a>
             </div>
         </div>
     </section>
@@ -138,7 +138,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                 <p>Introduce tus datos, realiza el pago y recibirás la confirmación de tu reserva al instante.</p>
             </div>
         </div>
-        <a href="reservas.html"><button class="btn-reserva-grande">Hacer mi reserva ahora</button></a>
+        <a href="reservas.php"><button class="btn-reserva-grande">Hacer mi reserva ahora</button></a>
     </section>
 
       <section id="calendario">
@@ -158,18 +158,18 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">09:00</button></a></td>
                 </tr>
                 <tr>
-                    <td><a href="reservas.html"><button class="hora">11:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">11:00</button></a></td>
-                    <td><a href="reservas.html"><button class="hora">11:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">11:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">11:00</button></a></td>
+                    <td><a href="reservas.php"><button class="hora">11:00</button></a></td>
                     <td><a href="reservas.html"><button class="hora">11:00</button></a></td>
                     <td><a href="reservas.html"><button class="hora">11:00</button></a></td>
                     <td><a href="reservas.html"><button class="hora">11:00</button></a></td>

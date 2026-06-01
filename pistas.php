@@ -46,7 +46,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                     <span class="detalle-badge">Nocturna</span>
                 </div>
             </div>
-            <a href="reservas.html" class="boton">Reservar</a>
+            <a href="reservas.php" class="boton">Reservar</a>
         </div>
 
         <div class="pista-card">
@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                     <span class="detalle-badge">Parqué</span>
                 </div>
             </div>
-            <a href="reservas.html" class="boton">Reservar</a>
+            <a href="reservas.php" class="boton">Reservar</a>
         </div>
 
         <div class="pista-card">
@@ -74,7 +74,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                     <span class="detalle-badge">Tierra batida</span>
                 </div>
             </div>
-            <a href="reservas.html" class="boton">Reservar</a>
+            <a href="reservas.php" class="boton">Reservar</a>
         </div>
 
         <div class="pista-card">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
                     <span class="detalle-badge">Césped</span>
                 </div>
             </div>
-            <a href="reservas.html" class="boton">Reservar</a>
+            <a href="reservas.php" class="boton">Reservar</a>
         </div>
 
         <div class="pista-card">
