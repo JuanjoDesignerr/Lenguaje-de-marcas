@@ -90,8 +90,8 @@
       <nav>
         <h1><a href="index.html">Polideportivo Orihuela</a></h1>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="pistas.html">Ver Pistas</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="pistas.php">Ver Pistas</a></li>
             <li><a href="perfil.php">Actualizar Datos</a></li>
             <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
         </ul>
