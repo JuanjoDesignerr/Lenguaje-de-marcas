@@ -118,16 +118,13 @@ nav ul li a:hover { background-color: #122a45; }
 .btn-insertar:hover { background-color: #145222; }
 
 .btn-actualizar {
-    padding: 11px;
     background-color: #1a3a5c;
     color: white;
-    border: none;
+    text-decoration: none; 
+    padding: 8px 16px;     
     border-radius: 6px;
-    cursor: pointer;
     font-weight: bold;
-    font-size: 14px;
-    width: 100%;
-    margin-top: 10px;
+    font-size: 13px;
 }
 
 .btn-actualizar:hover { background-color: #122a45; }
@@ -183,23 +180,28 @@ nav ul li a:hover { background-color: #122a45; }
      border-bottom: none; 
 }
 
-.badge-verde {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
+.tabla-cabecera button {
+    background-color: #1a3a5c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
 }
 
-.badge-rojo {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
+.tabla-cabecera button:hover {
+    background-color: #244f7d; 
 }
+
+.tabla-cabecera {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
 
 
 

@@ -256,47 +256,48 @@
         </div>
     </div>
 
+        <tbody>
+    
+</tbody>
 
-
-      <div class="contenedor-tabla">
-        <h3 class="tarjeta-titulo consultar-titulo">CONSULTAR USUARIOS</h3>
+    <div class="contenedor-tabla">
+        <div class="tabla-cabecera">
+            <h3>CONSULTAR USUARIOS</h3>
+            <a href="gestionUsuarios.php" class="btn-actualizar">ACTUALIZAR</a>
+        </div>
+        
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>USUARIO</th>
                     <th>EMAIL</th>
+                    <th>CONTRASEÑA</th>
                     <th>ROL</th>
                     <th>FECHA REGISTRO</th>
-                    <th>ESTADO</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- PHP: while($fila = mysqli_fetch_assoc($resultado)) -->
-                <tr>
-                    <td>001</td>
-                    <td>juan_garcia</td>
-                    <td>juan@correo.com</td>
-                    <td>Usuario</td>
-                    <td>20/05/2025</td>
-                    <td><span class="badge-verde">Activo</span></td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>admin_principal</td>
-                    <td>admin@polideportivo.es</td>
-                    <td>Admin</td>
-                    <td>01/01/2025</td>
-                    <td><span class="badge-verde">Activo</span></td>
-                </tr>
-                <tr>
-                    <td>003</td>
-                    <td>maria_lopez</td>
-                    <td>maria@correo.com</td>
-                    <td>Usuario</td>
-                    <td>22/05/2025</td>
-                    <td><span class="badge-rojo">Inactivo</span></td>
-                </tr>
+                <?php
+                try {
+                    $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+                    
+                    //Traemos todos los campos
+                    $stmt = $pdo->query("SELECT * FROM usuarios");
+                    
+                    //El bucle recorre la BD y va pintando las celdas ordenadamente en su sitio
+                    while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<tr>
+                                <td>{$user['nombre']}</td>
+                                <td>{$user['correo']}</td>
+                                <td>{$user['contrasena']}</td>
+                                <td>{$user['rol']}</td>
+                                <td>{$user['fecha_registro']}</td>
+                              </tr>";
+                    }
+                } catch (PDOException $e) {
+                    echo "Error al consultar la tabla". $e->getMessage();
+                }
+                ?>
             </tbody>
         </table>
     </div>
