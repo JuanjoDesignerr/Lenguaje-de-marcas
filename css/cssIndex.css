@@ -464,6 +464,62 @@ footer {
     color: #ffc233;
 }
 
+.panel-reservas {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    text-align: center;
+    border-top: 1px solid #dde4ec;
+}
+
+.panel-reservas h3 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    color: #1a3a5c;
+}
+
+.panel-sub {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 30px 0;
+}
+
+.tabla-contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.tabla-reservas {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    text-align: left;
+}
+
+.tabla-reservas th {
+    background-color: #1a3a5c;
+    color: white;
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+.tabla-reservas td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e8edf2;
+    font-size: 15px;
+    color: #333;
+}
+
+.tabla-reservas tr:last-child td {
+    border-bottom: none;
+}
+
+.usuario-nombre {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
 @media (max-width: 768px) {
     
     nav {
@@ -569,5 +625,16 @@ footer {
         gap: 30px;
         text-align: center;
         padding: 40px 20px;
+    }
+
+    .panel-reservas {
+        padding: 30px 15px;
+    }
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
+    .tabla-reservas th, .tabla-reservas td {
+        padding: 12px 10px;
+        font-size: 13px;
     }
 }

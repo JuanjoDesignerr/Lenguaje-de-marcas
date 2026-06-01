@@ -23,7 +23,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
             <li><a href="index.php">Inicio</a></li>
             <li><a href="pistas.html">Ver Pistas</a></li>
             <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="perfil.php">Actualizar Datos</a></li>
+            <li><a href="perfil.php">Actualizar</a></li>
             <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
         </ul>
     </nav>
@@ -219,12 +219,39 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
         </div>
     </section>
 
-
-
-
-
-
-
+    <section class="panel-reservas">
+        <h3>RESERVAS REGISTRADAS PARA HOY</h3>
+        <p class="panel-sub">Lista en tiempo real de las pistas ocupadas</p>
+        
+        <div class="tabla-contenedor">
+            <table class="tabla-reservas">
+                <thead>
+                    <tr>
+                        <th>Pista / Deporte</th>
+                        <th>Usuario</th>
+                        <th>Horario Reservado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pista de Fútbol</td>
+                        <td class="usuario-nombre">Carlos Gómez</td>
+                        <td>09:00</td>
+                    </tr>
+                    <tr>
+                        <td>Pista de Baloncesto</td>
+                        <td class="usuario-nombre">María López</td>
+                        <td>11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Pista de Tenis</td>
+                        <td class="usuario-nombre">Juan Martínez</td>
+                        <td>19:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     
     <footer>
         <div class="footer">
