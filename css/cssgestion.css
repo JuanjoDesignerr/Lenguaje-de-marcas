@@ -201,8 +201,11 @@ nav ul li a:hover { background-color: #122a45; }
     margin-bottom: 20px;
 }
 
-
-
+#paginador {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 
 footer {

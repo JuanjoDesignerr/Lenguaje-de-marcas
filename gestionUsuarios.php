@@ -260,6 +260,68 @@
     
 </tbody>
 
+    <?php
+        // Cuántos usuarios queremos ver por página
+        $limite = 3;
+
+        // Miramos en qué página estamos (si no han pulsado nada, empezamos en la 1)
+        if (isset($_POST["pagina"])) {
+            $pagina = (int)$_POST["pagina"];
+        } else {
+            $pagina = 1;
+        }
+
+        try {
+            $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+
+            // Contamos los usuarios uno a uno con el bucle
+            $contador_stmt = $pdo->query("SELECT * FROM usuarios");
+            $total_usuarios = 0;
+            while ($contador_stmt->fetch()) {
+                $total_usuarios++; 
+            }
+
+            /*
+            Calculamos cuántas páginas hacen falta en total.
+            Si tenemos 7 usuarios y van de 3 en 3:
+            7 / 3 = 2 páginas enteras. El resto % es 1 (sobra un usuario).
+            Como sobra un usuario, el IF le suma 1 página más. Total = 3 páginas.
+            */
+            $total_paginas = (int)($total_usuarios / $limite); 
+            if (($total_usuarios % $limite) > 0) {
+                $total_paginas++; 
+            }
+
+            //Logica botones (Ahora que $total_paginas ya existe, no dará error)
+            
+            //Controlamos que al avanzar no nos pasemos de la última página existente
+            if (isset($_POST["siguiente"]) && $pagina < $total_paginas) {
+                $pagina++;
+            }
+
+            if (isset($_POST["anterior"]) && $pagina > 1) {
+                $pagina--;
+            }
+
+            if (isset($_POST["primera"])) {
+                $pagina = 1;
+            }
+
+            // Si pulsan ">>", asignamos directamente el total de páginas que calculamos arriba
+            if (isset($_POST["ultima"])) {
+                $pagina = $total_paginas;
+            }
+
+            // Ej en pág 3: (3 * 3) - 3 = 6. SQL saltará los primeros 6 registros.
+            $inicio = ($pagina * $limite) - $limite;
+
+            
+
+        } catch (PDOException $e) {
+            echo 'Error con la base de datos: ' . $e->getMessage();
+        }
+    ?>
+
     <div class="contenedor-tabla">
         <div class="tabla-cabecera">
             <h3>CONSULTAR USUARIOS</h3>
@@ -282,7 +344,7 @@
                     $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
                     
                     //Traemos todos los campos
-                    $stmt = $pdo->query("SELECT * FROM usuarios");
+                    $stmt = $pdo->query("SELECT * FROM usuarios LIMIT $inicio, $limite");
                     
                     //El bucle recorre la BD y va pintando las celdas ordenadamente en su sitio
                     while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -300,7 +362,25 @@
                 ?>
             </tbody>
         </table>
+        
+        <div id="paginador">
+            <form method="POST" action="gestionUsuarios.php">
+                
+                <input type="submit" name="primera" value="<<">
+                
+                <input type="submit" name="anterior" value="<">
+                
+                <input type="number" name="pagina" value="<?php echo $pagina; ?>">
+                
+                <input type="submit" name="siguiente" value=">">
+
+                <input type="submit" name="ultima" value=">>">
+
+            </form>
+        </div>
+
     </div>
+    
 
      <footer>
         <div class="footer">
