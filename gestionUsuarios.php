@@ -41,9 +41,6 @@
         }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,21 +130,61 @@
         </form>
    
     </div>
-            <div class="tarjeta">
+
+
+        <?php 
+            $error_eliminar="";
+            $exito_eliminar="";
+            // Comprobamos que el administrador ha pulsado el botón de eliminar y ha enviado el correo.
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
+
+                if (!empty($_POST['usuario_correo'])) {
+                    $correo_a_borrar = $_POST['usuario_correo'];
+                }
+            
+                try {
+                    $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+                    
+                    $stmtDelete = $pdo->prepare("DELETE FROM usuarios WHERE correo = :correo");
+                    $stmtDelete->execute([':correo' => $correo_a_borrar]);
+
+                    //Si las columnas afectadas son mayores que 0 se habra eliminado correctamente.
+                    if ($stmtDelete->rowCount() > 0) {
+                        $exito_eliminar = "El usuario con correo con .'$correo_a_borrar' ha sido eliminado correctamente.";
+                    } else {
+                        $error_eliminar = "El correo introducido no es correcto";
+                    }
+
+                } catch(PDOException $e) {
+                    $e->getMessage();
+                }
+
+            }
+
+        ?>
+
+
+
+        <div class="tarjeta">
             <h3 class="tarjeta-titulo eliminar-titulo">ELIMINAR USUARIO</h3>
             <form method="POST" action="">
                 <div class="campo">
-                    <label>ID DEL USUARIO:</label>
-                    <input type="number" name="id_eliminar" placeholder="Introduce el ID">
-                </div>
-                <div class="campo">
-                    <label>CONFIRMAR NOMBRE:</label>
-                    <input type="text" name="confirmar_usuario" placeholder="Escribe el nombre para confirmar">
+                    <label>CORREO DEL USUARIO:</label>
+                    <input type="email" name="usuario_correo" placeholder="ejmplo@gmail.com" required> 
+                <?php if (!empty($error_eliminar)) {
+                    echo $error_eliminar; 
+                    } else {
+                        echo $exito_eliminar;
+                    }   
+                ?>
                 </div>
                 <button type="submit" name="eliminar" class="btn-eliminar">ELIMINAR USUARIO</button>
             </form>
         </div>
     </div>
+
+
+
       <div class="contenedor-tabla">
         <h3 class="tarjeta-titulo consultar-titulo">CONSULTAR USUARIOS</h3>
         <table>
