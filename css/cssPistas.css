@@ -167,3 +167,45 @@ footer {
     color: #f0a500;
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .pistas-banner {
+        padding: 30px 15px;
+    }
+
+    .pistas-banner h2 {
+        font-size: 22px;
+    }
+
+    .pistas-grid {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .pista-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}

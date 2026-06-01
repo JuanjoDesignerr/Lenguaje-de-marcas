@@ -463,3 +463,111 @@ footer {
 .footer a:hover {
     color: #ffc233;
 }
+
+@media (max-width: 768px) {
+    
+    nav {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cabecera {
+        padding: 50px 20px;
+    }
+
+    .cabecera-contenido h2 {
+        font-size: 28px;
+    }
+
+    .cabecera-botones {
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .datos-rapidos {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .dato {
+        flex-basis: 40%;
+    }
+
+    .deportes {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .deportes img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .texto {
+        text-align: center;
+    }
+
+    .texto h2 {
+        text-align: center;
+    }
+
+    .info-pista {
+        justify-content: center;
+    }
+
+    .botones {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .pasos {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .paso {
+        width: 85%;
+        max-width: 280px;
+    }
+
+    #calendario {
+        padding: 30px 10px;
+    }
+
+    #calendario table, #calendario thead, #calendario tbody, #calendario th, #calendario td, #calendario tr {
+        display: block;
+    }
+
+    #calendario th {
+        margin-bottom: 10px;
+    }
+
+    #calendario td {
+        padding: 5px 0;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding: 40px 20px;
+    }
+}

@@ -231,3 +231,65 @@ footer {
     color: #f0a500; 
     text-decoration: none; 
 }
+
+@media (max-width: 768px) {
+    
+    nav {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .contenedor-principal {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .tarjeta {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contenedor-tabla {
+        width: calc(100% - 40px);
+        padding: 15px;
+        margin: 0 auto 20px auto;
+        overflow-x: auto;
+    }
+
+    .contenedor-tabla table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tabla-cabecera {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #paginador form {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+}

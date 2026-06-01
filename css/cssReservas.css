@@ -76,3 +76,28 @@ body {
     color: #1a3a5c;
 }
 
+@media (max-width: 768px) {
+    body {
+        background-position: center;
+        min-height: 100vh;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #contenedor {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #formulario {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .boton {
+        width: 100%;
+    }
+}
