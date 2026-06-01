@@ -91,16 +91,13 @@
 
             <button type="submit" class="boton_login">INICIAR SESION</button>
 
-            <a href="olvidar_contraseña.html">¿Has olvidado tu contraseña?</a>
+            <a href="olvidar_contraseña.php">¿Has olvidado tu contraseña?</a>
 
             <a href="registrarse.php">No tienes cuenta, regístrate</a>
             
         
-            <a href="admin.html" class="enlace-admin">Acceso administrador</a>
+            <a href="admin.php" class="enlace-admin">Acceso administrador</a>
         </div>
-
-        
-
 
     </section>
 </body>

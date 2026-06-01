@@ -2,11 +2,6 @@
     session_start();
     $error = "";
     try {
-       //En caso de que accedamos mediante url el usuario no habra iniciado sesion por lo que le hecharemos.
-        if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
-            header("Location: Login.php");
-            exit();
-        }
 
         $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
         
