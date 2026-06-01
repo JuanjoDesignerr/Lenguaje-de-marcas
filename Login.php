@@ -1,4 +1,3 @@
-
 <?php
     //Para recordar al usuario en la web
     session_start();

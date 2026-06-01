@@ -93,7 +93,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="pistas.html">Ver Pistas</a></li>
             <li><a href="perfil.html">Ver Perfil</a></li>
-            <li><a href="Login.html">Cerrar Sesión</a></li>
+            <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
     
