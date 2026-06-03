@@ -113,7 +113,9 @@
                 <div id="informacion">
                     <h3>Datos a cambiar</h3>
 
-
+                        <?php 
+                        echo $exito;
+                        ?>
                      <div class="campo">
                         <label>USUARIO</label>
                         <input type="text" name="nuevo_nombre" placeholder="Nuevo Nombre" required>

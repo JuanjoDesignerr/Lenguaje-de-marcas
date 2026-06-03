@@ -1,16 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-image: url('../imagenes/fondo.jpg');
     background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    width: 100%;
     margin: 0;
-}
-
-#nombre {
-    display: flex;
-    align-items: center;
-    color: white;
 }
 
 #login {
@@ -18,8 +21,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding-top: 40px;
+    gap: 15px;
+    width: 100%;
+}
+
+#nombre {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-transform: uppercase; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    text-align: center;
 }
 
 #contenedor1 {
@@ -30,11 +43,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 #contenedor1 h2 {
-    align-self: flex-start;
-    margin-bottom: 20px;
+    align-self: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #2c3e50;
 }
 
 .campo {
@@ -46,6 +63,7 @@ body {
 .campo label {
     font-weight: bold;
     font-size: 13px;
+    color: #34495e;
 }
 
 .campo input {
@@ -64,7 +82,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
     transition: background-color 0.2s ease;
 }
 
@@ -88,27 +106,31 @@ body {
 .redes p {
     font-weight: bold;
     font-size: 13px;
-    margin: 5px;
+    margin: 15px 0 5px 0;
+    text-align: center;
 }
 
 .botones-redes {
     display: flex;
     justify-content: space-between;
+    gap: 10px; 
 }
 
 .botones-redes button {
-    padding: 9px 20px;
-    border: 2px solid black;
+    flex: 1; 
+    padding: 9px;
+    border: 1px solid #ccc;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
     font-size: 13px;
     background-color: white;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .botones-redes button:hover {
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
+    border-color: #999;
 }
 
 .enlace-admin {
@@ -120,11 +142,11 @@ body {
     border: 2px solid #1a3a5c;
     border-radius: 6px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 10px;
     transition: all 0.2s ease;
 }
 
 .enlace-admin:hover {
-    background-color: #e9ebee;
+    background-color: #beb9c5;
     color: white;
 }

@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Si el usuario no ha iniciado sesion, no puede entrar.
 if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
     header("Location: Login.php");
@@ -20,6 +19,7 @@ if (!isset($_SESSION['usuario_nombre']) && !isset($_SESSION['admin_usuario'])) {
     <nav>
         <h1><a href="index.html">Polideportivo Orihuela</a></h1>
         <ul>
+            
             <li><a href="index.php">Inicio</a></li>
             <li><a href="pistas.php">Ver Pistas</a></li>
             <li><a href="reservas.php">Reservas</a></li>
