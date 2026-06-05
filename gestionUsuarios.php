@@ -335,58 +335,84 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
     <div class="contenedor-tabla">
         <div class="tabla-cabecera">
             <h3>CONSULTAR USUARIOS</h3>
+
             <a href="gestionUsuarios.php" class="btn-actualizar">ACTUALIZAR</a>
         </div>
+
+        <form method="POST" action="gestionUsuarios.php">
+            <label>BUSCADOR:</label>
+            <input type="text" name="texto_buscar" placeholder="texto" value="<?php 
+            if (isset($_POST['texto_buscar'])) { 
+                echo $_POST['texto_buscar']; 
+            } ?>">
         
-        <table>
-            <thead>
-                <tr>
-                    <th>USUARIO</th>
-                    <th>EMAIL</th>
-                    <th>CONTRASEÑA</th>
-                    <th>ROL</th>
-                    <th>FECHA REGISTRO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                try {
-                    $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>USUARIO</th>
+                        <th>EMAIL</th>
+                        <th>CONTRASEÑA</th>
+                        <th>ROL</th>
+                        <th>FECHA REGISTRO</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
                     
-                    //Traemos todos los campos
-                    $stmt = $pdo->query("SELECT * FROM usuarios LIMIT $inicio, $limite");
-                    
-                    //El bucle recorre la BD y va pintando las celdas ordenadamente en su sitio
-                    while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        echo "<tr>
-                                <td>{$user['nombre']}</td>
-                                <td>{$user['correo']}</td>
-                                <td>{$user['contrasena']}</td>
-                                <td>{$user['rol']}</td>
-                                <td>{$user['fecha_registro']}</td>
-                              </tr>";
+                    <?php
+                    try {
+                        $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+                        
+                        
+                        //comprobacion de que el usuario haya escrito en el filtro y no este vacio.
+                        if(isset($_POST['texto_buscar']) && !empty($_POST['texto_buscar'])) {
+                            $buscar = $_POST['texto_buscar'];
+
+                            $sql = "SELECT * FROM usuarios WHERE nombre LIKE :palabra OR correo LIKE :palabra OR rol LIKE :palabra LIMIT $inicio, $limite";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->execute([':palabra' => '%' . $buscar . '%']);
+                        
+                        
+                            } else {
+
+                            //Traemos todos los campos
+                            $stmt = $pdo->query("SELECT * FROM usuarios LIMIT $inicio, $limite");
+
+                        }
+                        
+                        //El bucle recorre la BD y va pintando las celdas ordenadamente en su sitio
+                        while ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<tr>
+                                    <td>{$user['nombre']}</td>
+                                    <td>{$user['correo']}</td>
+                                    <td>{$user['contrasena']}</td>
+                                    <td>{$user['rol']}</td>
+                                    <td>{$user['fecha_registro']}</td>
+                                </tr>";
+                        }
+                    } catch (PDOException $e) {
+                        echo "Error al consultar la tabla". $e->getMessage();
                     }
-                } catch (PDOException $e) {
-                    echo "Error al consultar la tabla". $e->getMessage();
-                }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
+            
+            <div id="paginador">
+            
+                    
+            <input type="submit" name="primera" value="<<">
+            
+            <input type="submit" name="anterior" value="<">
+            
+            <input type="number" name="pagina" value="<?php echo $pagina; ?>">
+            
+            <input type="submit" name="siguiente" value=">">
+
+            <input type="submit" name="ultima" value=">>">
         
-        <div id="paginador">
-            <form method="POST" action="gestionUsuarios.php">
-                
-                <input type="submit" name="primera" value="<<">
-                
-                <input type="submit" name="anterior" value="<">
-                
-                <input type="number" name="pagina" value="<?php echo $pagina; ?>">
-                
-                <input type="submit" name="siguiente" value=">">
-
-                <input type="submit" name="ultima" value=">>">
-
-            </form>
+        </form>
         </div>
 
     </div>
