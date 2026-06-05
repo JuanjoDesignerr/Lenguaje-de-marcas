@@ -232,6 +232,23 @@ footer {
     text-decoration: none; 
 }
 
+.btn-modificar {
+    width: 100px;               
+    padding: 8px 0;         
+    background-color: #0275d8; 
+    color: white;         
+    border: none;          
+    border-radius: 6px;    
+    font-size: 14px;
+    font-weight: bold;      
+    cursor: pointer;       
+    text-align: center;
+}
+
+.btn-modificar:hover {
+    background-color: #025aa5; 
+}
+
 @media (max-width: 768px) {
     
     nav {

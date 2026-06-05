@@ -8,33 +8,34 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
     exit();
 }
 ?>
-  <?php 
-            try{
-                $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
-                
-                $nombre_modificar = "";
-                $contrasena_modificar = "";
-                $rol_modificar = "";
+
+<?php 
+        try{
+            $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+            
+            $nombre_modificar = "";
+            $contrasena_modificar = "";
+            $rol_modificar = "";
 
 
-                if (isset($_POST['modificar_usuario'])) {
-                    $correo_a_buscar = $_POST['modificar_usuario'];
+            if (isset($_POST['modificar_usuario'])) {
+                $correo_a_buscar = $_POST['modificar_usuario'];
+            
+                $stmt_buscar = $pdo->prepare("SELECT nombre, contrasena, rol FROM usuarios WHERE correo = :correo");
+                $stmt_buscar->execute([':correo' => $correo_a_buscar]);
+                $usuario_encontrado = $stmt_buscar->fetch(PDO::FETCH_ASSOC);
                 
-                    $stmt_buscar = $pdo->prepare("SELECT nombre, contrasena, rol FROM usuarios WHERE correo = :correo");
-                    $stmt_buscar->execute([':correo' => $correo_a_buscar]);
-                    $usuario_encontrado = $stmt_buscar->fetch(PDO::FETCH_ASSOC);
-                    
-                    if ($usuario_encontrado) {
-                        $nombre_modificar = $usuario_encontrado['nombre'];
-                        $contrasena_modificar = $usuario_encontrado['contrasena'];
-                        $rol_modificar = $usuario_encontrado['rol'];
-                    }
+                if ($usuario_encontrado) {
+                    $nombre_modificar = $usuario_encontrado['nombre'];
+                    $contrasena_modificar = $usuario_encontrado['contrasena'];
+                    $rol_modificar = $usuario_encontrado['rol'];
                 }
-
-            } catch(PDOException $e) {
-                echo "Error" . $e->getMessage();
             }
-        ?>
+
+        } catch(PDOException $e) {
+            echo "Error" . $e->getMessage();
+        }
+?>
 
 <?php 
     $error = "";
@@ -412,7 +413,7 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
                         <th>CONTRASEÑA</th>
                         <th>ROL</th>
                         <th>FECHA REGISTRO</th>
-                        <th>ACCIONES</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
