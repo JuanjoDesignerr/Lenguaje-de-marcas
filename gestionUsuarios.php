@@ -253,13 +253,20 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
             <form method="POST" action="">
                 <div class="campo">
                     <label>CORREO DEL USUARIO:</label>
-                    <input type="email" name="usuario_correo" placeholder="ejmplo@gmail.com" required> 
-                <?php if (!empty($error_eliminar)) {
+                    <input type="email" name="usuario_correo" placeholder="ejmplo@gmail.com" required value="
+                <?php
+                if (isset($_POST['eliminar_usuario'])) { 
+                    echo $_POST['eliminar_usuario']; 
+                } ?>">
+                
+                <?php 
+                    if (!empty($error_eliminar)) {
                     echo $error_eliminar; 
                     } else {
                         echo $exito_eliminar;
-                    }   
+                    }  
                 ?>
+
                 </div>
                 <button type="submit" name="eliminar" class="btn-eliminar">ELIMINAR USUARIO</button>
             </form>
@@ -357,10 +364,11 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
                         <th>ROL</th>
                         <th>FECHA REGISTRO</th>
                         <th>ACCIONES</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <?php
                     try {
                         $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
@@ -370,11 +378,11 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
                         if(isset($_POST['texto_buscar']) && !empty($_POST['texto_buscar'])) {
                             $buscar = $_POST['texto_buscar'];
 
+                            
                             $sql = "SELECT * FROM usuarios WHERE nombre LIKE :palabra OR correo LIKE :palabra OR rol LIKE :palabra LIMIT $inicio, $limite";
                             $stmt = $pdo->prepare($sql);
                             $stmt->execute([':palabra' => '%' . $buscar . '%']);
-                        
-                        
+
                             } else {
 
                             //Traemos todos los campos
@@ -390,6 +398,12 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
                                     <td>{$user['contrasena']}</td>
                                     <td>{$user['rol']}</td>
                                     <td>{$user['fecha_registro']}</td>
+                                    <td>
+                                    <button type='submit' name='eliminar_usuario' value='{$user['correo']}' class='btn-eliminar'>Eliminar</button>
+                                    </td>
+                                    <td>
+                                    <button type='submit' name='modificar_usuario' value='{$user['correo']}' class='btn-modificar'>Modificar</button>
+                                    </td>
                                 </tr>";
                         }
                     } catch (PDOException $e) {
