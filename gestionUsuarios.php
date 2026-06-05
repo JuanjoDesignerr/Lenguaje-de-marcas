@@ -1,12 +1,40 @@
 <?php
 session_start();
 
+
 // Si el usuario no ha iniciado sesion, no puede entrar.
 if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
     header("Location: Login.php");
     exit();
 }
 ?>
+  <?php 
+            try{
+                $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
+                
+                $nombre_modificar = "";
+                $contrasena_modificar = "";
+                $rol_modificar = "";
+
+
+                if (isset($_POST['modificar_usuario'])) {
+                    $correo_a_buscar = $_POST['modificar_usuario'];
+                
+                    $stmt_buscar = $pdo->prepare("SELECT nombre, contrasena, rol FROM usuarios WHERE correo = :correo");
+                    $stmt_buscar->execute([':correo' => $correo_a_buscar]);
+                    $usuario_encontrado = $stmt_buscar->fetch(PDO::FETCH_ASSOC);
+                    
+                    if ($usuario_encontrado) {
+                        $nombre_modificar = $usuario_encontrado['nombre'];
+                        $contrasena_modificar = $usuario_encontrado['contrasena'];
+                        $rol_modificar = $usuario_encontrado['rol'];
+                    }
+                }
+
+            } catch(PDOException $e) {
+                echo "Error" . $e->getMessage();
+            }
+        ?>
 
 <?php 
     $error = "";
@@ -90,6 +118,7 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
             <div class="campo">
                 <label>NOMBRE DE USUARIO:</label>
                 <input type="text" name="usuario" placeholder="Nombre de usuario" required>
+
             </div>
             <div class="campo">
                 <label>CORREO ELECTRÓNICO:</label>
@@ -189,19 +218,39 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
                     }   
                 ?>
                 <label>CORREO DEL USUARIO</label>
-                <input type="email" name="correo_buscar" placeholder="Introduzca el correo del usuario">
+                <input type="email" name="correo_buscar" placeholder="Introduzca el correo del usuario" value="<?php 
+                if (isset($_POST['modificar_usuario'])) { 
+                    echo $_POST['modificar_usuario']; 
+                } ?>">
+
             </div>
             <div class="campo">
                 <label>NUEVO NOMBRE DE USUARIO:</label>
-                <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre">
+                <input type="text" name="nuevo_nombre" placeholder="Nuevo nombre" value="<?php 
+                if (isset($_POST['modificar_usuario'])) { 
+                    echo $nombre_modificar; 
+                } else {
+                    echo "";
+                } ?>">  
+
             </div>
             <div class="campo">
                 <label>NUEVO CORREO:</label>
-                <input type="email" name="nuevo_correo" placeholder="Nuevo correo">
+                <input type="email" name="nuevo_correo" placeholder="Nuevo correo" value="<?php 
+                if (isset($_POST['modificar_usuario'])) { 
+                    echo $_POST['modificar_usuario']; 
+                } ?>">
+
             </div>
             <div class="campo">
                 <label>NUEVA CONTRASEÑA:</label>
-                <input type="password" name="nueva_contrasena" placeholder="Nueva contraseña">
+                <input type="password" name="nueva_contrasena" placeholder="Nueva contraseña" value="<?php 
+                if (isset($_POST['modificar_usuario'])) { 
+                    echo $contrasena_modificar; 
+                } else {
+                    echo "";
+                } ?>">
+
             </div>
             <div class="campo">
                 <label>NUEVO ROL:</label>
@@ -428,6 +477,8 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
         
         </form>
         </div>
+
+      
 
     </div>
     
