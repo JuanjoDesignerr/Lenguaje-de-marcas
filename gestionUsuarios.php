@@ -341,11 +341,26 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
         try {
             $pdo = new PDO("mysql:host=localhost;dbname=poli_bd;charset=utf8", "root", "");
 
-            // Contamos los usuarios uno a uno con el bucle
-            $contador_stmt = $pdo->query("SELECT * FROM usuarios");
             $total_usuarios = 0;
-            while ($contador_stmt->fetch()) {
+            // Contamos los usuarios uno a uno con el bucle
+            if (isset($_POST['texto_buscar']) && !empty($_POST['texto_buscar'])) {
+            $buscar = $_POST['texto_buscar'];
+
+            $sql_contar = "SELECT COUNT(*) FROM usuarios WHERE nombre LIKE :palabra OR correo LIKE :palabra OR rol LIKE :palabra";
+            $stmt_contar = $pdo->prepare($sql_contar);
+            $stmt_contar->execute([':palabra' => '%' . $buscar . '%']);
+                
+            while ($stmt_contar->fetch()) {
                 $total_usuarios++; 
+            }         
+
+            } else {
+
+                $contador_stmt = $pdo->query("SELECT * FROM usuarios");
+                $total_usuarios = 0;
+                while ($contador_stmt->fetch()) {
+                    $total_usuarios++; 
+                }
             }
 
             /*
@@ -358,6 +373,7 @@ if (!isset($_SESSION['admin_nombre']) && !isset($_SESSION['admin_usuario'])) {
             if (($total_usuarios % $limite) > 0) {
                 $total_paginas++; 
             }
+            
 
             //Logica botones (Ahora que $total_paginas ya existe, no dará error)
             
